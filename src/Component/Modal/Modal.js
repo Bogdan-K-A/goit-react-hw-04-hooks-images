@@ -7,7 +7,10 @@ export default function Modal({ onClick, largImageURL }) {
   /* ------------------------- методы жизненного цикла в которые записаны слушатели событий ------------------------ */
   useEffect(() => {
     window.addEventListener('keydown', closeModal)
-  }, [])
+    return () => {
+      window.addEventListener('keydown', closeModal)
+    }
+  })
 
   /* ------------- функция закрытия модалки по нажатию на Escape переданная через пропс ------------ */
   const closeModal = (e) => {

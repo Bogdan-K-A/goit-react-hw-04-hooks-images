@@ -26,7 +26,7 @@ export default function App() {
 
   /* -------------------------- функция фетч запроса -------------------------- */
   const imgFatchApi = () => {
-    setStatus('panding')
+    setStatus('pending')
     /* ------------------- передаём в функцию два аргумента которые будут передавать значения imagesApi ------------------ */
     fetchAPI(searchinput, page)
       /* ---------------- В аргумент then вписываем произволное имя в это имя передаётся response.json() --------------- */
@@ -84,7 +84,7 @@ export default function App() {
     <div>
       <Searchbar onSubmit={handelSearchSubmitForm} />
 
-      {status === 'panding' && <Spinner />}
+      {status === 'pending' && <Spinner />}
 
       {result.length > 0 && (
         <>
