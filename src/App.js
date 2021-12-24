@@ -84,14 +84,14 @@ export default function App() {
     <div>
       <Searchbar onSubmit={handelSearchSubmitForm} />
 
-      {status === 'pending' && <Spinner />}
-
       {result.length > 0 && (
         <>
           <ImageGallery onModalOpen={handelOpenModal} result={result} />
           <Button onLoadMore={handelLoadMore} />
         </>
       )}
+
+      {status === 'pending' && <Spinner />}
 
       {largImageURL && (
         <Modal largImageURL={largImageURL} onClick={handelCloseModal} />
